@@ -19,11 +19,12 @@ public class LinkCheck {
 
 		WebDriver driver = new HtmlUnitDriver();
 
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		driver.get("");
 
 		List<WebElement> linkVals = driver.findElements(By.tagName("a"));
+
 
 		int linkSize = linkVals.size();
 
@@ -33,8 +34,10 @@ public class LinkCheck {
 
 			String lName = linkVals.get(i).getText();
 
+			String lRef = linkVals.get(i).getAttribute("href");
+
 			System.out.println(i+1);
-			System.out.println(lName);
+			System.out.println(lName +" "+ lRef);
 		}
 
 
