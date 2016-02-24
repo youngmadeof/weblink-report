@@ -6,22 +6,18 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class LinkCheck {
 
 	public static void main(String[] args) {
 
-		//turns off htmlunitdriver warnings
-		java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(java.util.logging.Level.OFF);
-	    java.util.logging.Logger.getLogger("org.apache.http").setLevel(java.util.logging.Level.OFF);
 
-
-		WebDriver driver = new HtmlUnitDriver();
+		WebDriver driver = new FirefoxDriver();
 
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-		driver.get("http://www.ctfc.com/");
+		driver.get("xxx");
 
 		List<WebElement> linkVals = driver.findElements(By.tagName("a"));
 
